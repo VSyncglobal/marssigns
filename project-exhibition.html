@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibition Graphics | Mars Signs</title>
+    <!-- Use the exact same CSS as blog.html, but add Project specific layouts below -->
+    <link rel="stylesheet" href="project-base.css"> 
+    <style>
+        /* Embedding required CSS for standalone functionality */
+        :root { --bg-color: #ffffff; --text-primary: #1a1a1a; --text-secondary: #666666; --border-color: #e5e5e5; --header-bg: rgba(255, 255, 255, 0.95); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        .loading-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .loading-overlay.active { opacity: 1; pointer-events: auto; }
+        .spinner { width: 40px; height: 40px; border: 2px solid var(--border-color); border-top: 2px solid var(--text-primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .fade-in-section, .reveal-fade { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
+        .fade-in-section.is-visible, .reveal-fade.in-view { opacity: 1; transform: translateY(0); }
+        
+        #main-header { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1400px; background: var(--header-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 40px; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; z-index: 1000; }
+        .logo img { height: 32px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-primary); font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease; }
+        .back-btn { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+        
+        .project-hero { margin-top: 120px; width: 100%; height: 60vh; background-color: var(--border-color); position: relative; overflow: hidden; }
+        .project-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .project-container { max-width: 1400px; margin: 4rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr; gap: 4rem; }
+        @media (min-width: 1024px) { .project-container { grid-template-columns: 3fr 1fr; } }
+        
+        .project-header { margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem; }
+        .project-header h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        .project-meta-data { display: flex; gap: 2rem; color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .project-content p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; }
+        .project-content img { width: 100%; height: auto; margin: 2rem 0; background-color: var(--border-color); }
+        
+        .sidebar-panel { position: sticky; top: 120px; background: var(--bg-color); border: 1px solid var(--border-color); padding: 2rem; }
+        .sidebar-panel h3 { font-size: 1.25rem; font-weight: 500; margin-bottom: 1rem; }
+        .sidebar-panel p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem; }
+        .btn-primary { display: block; width: 100%; padding: 1rem; background: var(--text-primary); color: var(--bg-color); text-align: center; text-decoration: none; font-weight: 500; transition: transform 0.2s ease; }
+        .btn-primary:hover { transform: scale(0.98); }
+        
+        .related-panel { max-width: 1400px; margin: 0 auto 6rem; padding: 4rem 2rem 0; border-top: 1px solid var(--border-color); }
+        .related-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; }
+        .related-link { text-decoration: none; color: var(--text-primary); font-weight: 500; transition: transform 0.2s ease; }
+        .related-link:hover { transform: translateX(5px); }
+        .image-gallery-bottom { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .image-gallery-bottom img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+        footer { border-top: 1px solid var(--border-color); padding: 4rem 2rem; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div class="loading-overlay" id="global-loader">
+        <div class="spinner"></div>
+    </div>
+
+    <header id="main-header">
+        <div class="logo">
+            <a href="blog.html" class="async-click">
+                <img src="./images/1024/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg" alt="Mars Signs">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="blog.html" class="back-btn async-click"><span>←</span> Back to Divisions</a>
+        </nav>
+    </header>
+
+    <section class="project-hero fade-in-section">
+        <img src="./images/1400/20341388/exibition-graphics-1aSu41fe87ZLRt1886na6A.jpg" alt="Exhibition Graphics Doha">
+    </section>
+
+    <main class="project-container">
+        <article class="project-content">
+            <header class="project-header fade-in-section">
+                <h1>High-Impact Exhibition Graphics</h1>
+                <div class="project-meta-data">
+                    <span><strong>Sector:</strong> Corporate Events</span>
+                    <span><strong>Location:</strong> Doha, Qatar</span>
+                </div>
+            </header>
+
+            <div class="fade-in-section">
+                <p>Commanding presence on the exhibition floor requires more than standard visual communication; it demands structural integrity and pristine graphic execution. For this deployment in the Qatar market, our Core Production Division engineered large-scale, modular exhibition assets designed to withstand high-traffic environments while delivering a seamless brand narrative.</p>
+            </div>
+
+
+            <div class="fade-in-section">
+                <p>Utilizing state-of-the-art wide-format printing technology, we ensured absolute color fidelity mapped directly to the client's corporate identity guidelines. The underlying framework was constructed with lightweight, high-durability materials, allowing for rapid assembly without compromising architectural stability.</p>
+            </div>
+        </article>
+
+        
+    </main>
+
+    <section class="related-panel fade-in-section">
+        <div class="related-header">
+            <h2>Explore More</h2>
+            <a href="project-facades.html" class="related-link async-click">Next: Architectural Shop Facades →</a>
+        </div>
+        <div class="image-gallery-bottom">
+            <img src="./images/460/20854829/shop-facade-marssign-contact-us-4qo4-RxrtQDIbpQvfnCMsQ.jpg" alt="Facade Component" class="reveal-fade">
+            <img src="./images/460/20853499/sign-board-marssign-services-ORnOBLo2FVAgCn75i3IHmA.jpg" alt="Sign Board Services" class="reveal-fade">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mars Signs. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

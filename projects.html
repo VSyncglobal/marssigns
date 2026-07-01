@@ -2,176 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Our Portfolio | Mars Sign & Craft Deployments in Qatar</title>
-    <meta name="description" content="Explore our structural gallery of completed signage, fleet branding, and custom fabrication projects for elite enterprises across Doha, Qatar.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Deployments | Mars Signs Qatar</title>
+    <link rel="stylesheet" href="project-base.css">
+    <style>
+        /* Embedding core styles for standalone functionality */
+        :root { --bg-color: #ffffff; --text-primary: #1a1a1a; --text-secondary: #666666; --border-color: #e5e5e5; --header-bg: rgba(255, 255, 255, 0.95); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        
+        .loading-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .loading-overlay.active { opacity: 1; pointer-events: auto; }
+        .spinner { width: 40px; height: 40px; border: 2px solid var(--border-color); border-top: 2px solid var(--text-primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .fade-in-section { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
 
-    <!-- SEO: Portfolio Collection Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Mars Sign & Craft Project Portfolio",
-      "description": "Gallery of recent corporate signage, vehicle wraps, and custom fabrication deployments in Qatar.",
-      "url": "https://marssigns.com/projects.html",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Mars Signs",
-        "url": "https://marssigns.com/"
-      }
-    }
-    </script>
+        #main-header { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1400px; background: var(--header-bg); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 40px; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; z-index: 1000; }
+        .logo img { height: 32px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-primary); font-size: 0.9rem; font-weight: 500; }
+        
+        .hero-section { height: 50vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background-color: var(--border-color); margin-bottom: 4rem; }
+        .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 1rem; }
+        
+        .arrangement-container { max-width: 1400px; margin: 0 auto 6rem; padding: 0 2rem; }
+        .arrangement-header { font-size: 1.5rem; font-weight: 500; margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 3rem 2rem; }
+        
+        .card { display: flex; flex-direction: column; text-decoration: none; color: inherit; cursor: pointer; transition: transform 0.2s ease; }
+        .card:hover { transform: scale(0.98); }
+        .card-image-wrapper { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--border-color); margin-bottom: 1rem; }
+        .card-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .card:hover .card-image-wrapper img { transform: scale(1.05); }
+        .card-meta { font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 0.5rem; }
+        .card-title { font-size: 1.25rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .card-excerpt { color: var(--text-secondary); font-size: 0.95rem; }
+        
+        footer { border-top: 1px solid var(--border-color); padding: 4rem 2rem; text-align: center; color: var(--text-secondary); }
+    </style>
 </head>
 <body>
+    <div class="loading-overlay" id="global-loader"><div class="spinner"></div></div>
 
-    <!-- Floating Curved Header -->
-    <header id="main-header" class="floating-header">
-        <div class="header-container">
-            <a href="/" class="logo" aria-label="Mars Signs Home">
-                <img src="https://marssigns.com/wp-content/uploads/2024/09/marssigns.png" alt="Mars Signs Logo" width="172" height="47" class="brand-logo">
-            </a>
-            <nav class="primary-nav">
-                <a href="/index.html#solutions">Solutions</a>
-                <a href="/index.html#about">About Us</a>
-                <a href="/projects.html" class="active">Projects</a>
-                <a href="/blog.html">Insights</a>
-                <a href="/index.html#contact" class="btn-primary">Work With Us</a>
-            </nav>
+    <header id="main-header">
+        <div class="logo">
+            <a href="index.html"><img src="./images/1024/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg" alt="Mars Signs"></a>
         </div>
+        <nav class="nav-links">
+            <a href="blog.html" class="async-click">Insights</a>
+            <a href="projects.html" class="async-click">Projects</a>
+        </nav>
     </header>
 
-    <main style="padding-top: 150px;">
-        <!-- Page Header -->
-        <section class="container text-center reveal-fade mb-50">
-            <p class="section-tag">PORTFOLIO</p>
-            <h1 class="section-title">Recent Deployments</h1>
-            <p class="hero-desc" style="color: var(--text-body); max-width: 700px; margin: 0 auto;">Review our structural gallery of high-precision signage, fleet branding, and custom fabrication executed for leading enterprises in Doha.</p>
-        </section>
+    <section class="hero-section fade-in-section">
+        <div class="hero-content">
+            <h1>Core Production Divisions</h1>
+            <p>Scalable, high-impact structural branding solutions.</p>
+        </div>
+    </section>
 
-        <!-- Projects Grid -->
-        <section class="container mt-100" id="project-gallery">
-            <div class="grid-container">
-                
-                <!-- Project 1 -->
-                <article class="floating-card interactive-card p-0 reveal-fade">
-                    <div class="card-image-wrapper">
-                        <!-- Replace with actual project image -->
-                        <div class="image-placeholder" style="height: 100%; border-radius: 16px 16px 0 0; margin: 0;"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-category">Corporate Signage</h3>
-                        <h4 class="card-title">West Bay Headquarters 3D Logo</h4>
-                        <p style="margin-top: 10px; font-size: 0.95rem;">Precision-cut 3D acrylic letters with integrated LED backlighting for maximum nighttime visibility in the corporate district.</p>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="floating-card interactive-card p-0 reveal-fade">
-                    <div class="card-image-wrapper">
-                        <div class="image-placeholder" style="height: 100%; border-radius: 16px 16px 0 0; margin: 0;"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-category">Fleet Branding</h3>
-                        <h4 class="card-title">Doha Logistics Delivery Fleet</h4>
-                        <p style="margin-top: 10px; font-size: 0.95rem;">Full vinyl wraps engineered with UV-resistant coatings to withstand Qatar's intense summer climate while maintaining brand integrity.</p>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="floating-card interactive-card p-0 reveal-fade">
-                    <div class="card-image-wrapper">
-                        <div class="image-placeholder" style="height: 100%; border-radius: 16px 16px 0 0; margin: 0;"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-category">Custom Fabrication</h3>
-                        <h4 class="card-title">Lusail Retail Exhibition Stands</h4>
-                        <p style="margin-top: 10px; font-size: 0.95rem;">Modular display stands and queue barriers designed for high-traffic retail environments, combining structural stability with modern aesthetics.</p>
-                    </div>
-                </article>
-
-                <!-- Project 4 -->
-                <article class="floating-card interactive-card p-0 reveal-fade">
-                    <div class="card-image-wrapper">
-                        <div class="image-placeholder" style="height: 100%; border-radius: 16px 16px 0 0; margin: 0;"></div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-category">Honor Craft</h3>
-                        <h4 class="card-title">National Sports Event Medals</h4>
-                        <p style="margin-top: 10px; font-size: 0.95rem;">Bespoke metal fabrication and chemical engraving for 500+ medals and achievement plaques delivered on a strict two-week timeline.</p>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Project FAQs -->
-        <section class="container mt-100 mb-100" id="faqs">
-            <div class="floating-card reveal-fade">
-                <p class="section-tag">COMMON INQUIRIES</p>
-                <h2 class="section-title">Deployment FAQs</h2>
-                
-                <div class="faq-accordion mt-40">
-                    <details class="faq-item interactive-selection">
-                        <summary class="faq-question">What is your standard turnaround time for corporate signage?</summary>
-                        <p class="faq-answer">Standard production cycles range from 7 to 14 business days depending on the complexity of the fabrication and the scale of the deployment. Expedited timelines are available upon request.</p>
-                    </details>
-                    
-                    <details class="faq-item interactive-selection">
-                        <summary class="faq-question">Do your vehicle wraps withstand the Qatar summer heat?</summary>
-                        <p class="faq-answer">Absolutely. We utilize elite-grade cast vinyl combined with UV-resistant laminates specifically engineered to resist fading, peeling, and cracking in extreme Middle Eastern climates.</p>
-                    </details>
-
-                    <details class="faq-item interactive-selection">
-                        <summary class="faq-question">Can you match precise corporate brand colors?</summary>
-                        <p class="faq-answer">Yes. Our advanced large-format printing and sublimation technology utilize strict Pantone (PMS) color-matching protocols to ensure your brand identity remains 100% consistent across all mediums.</p>
-                    </details>
-
-                    <details class="faq-item interactive-selection">
-                        <summary class="faq-question">Do you handle the installation and maintenance?</summary>
-                        <p class="faq-answer">Yes, we provide end-to-end service. Our deployment teams handle all site structural installations, and we offer ongoing maintenance and safe removal services for temporary exhibition structures.</p>
-                    </details>
+    <main class="arrangement-container">
+        <h2 class="arrangement-header fade-in-section">Latest Deployments</h2>
+        <div class="project-grid">
+            <a href="project-exhibition.html" class="card fade-in-section async-click">
+                <div class="card-image-wrapper">
+                    <img src="./images/1400/20341388/exibition-graphics-1aSu41fe87ZLRt1886na6A.jpg" alt="Exhibition Graphics">
                 </div>
-            </div>
-        </section>
+                <div class="card-meta">Corporate Events / Doha</div>
+                <h3 class="card-title">Exhibition Graphics</h3>
+                <p class="card-excerpt">Modular, high-durability visual architecture designed to command authority.</p>
+            </a>
+            <a href="project-facades.html" class="card fade-in-section async-click">
+                <div class="card-image-wrapper">
+                    <img src="./images/460/20854829/shop-facade-marssign-contact-us-4qo4-RxrtQDIbpQvfnCMsQ.jpg" alt="Shop Facades">
+                </div>
+                <div class="card-meta">Architectural / Msheireb</div>
+                <h3 class="card-title">Architectural Shop Facades</h3>
+                <p class="card-excerpt">Weather-resistant, premium facade materials engineered for the Gulf climate.</p>
+            </a>
+            <a href="project-engraving.html" class="card fade-in-section async-click">
+                <div class="card-image-wrapper">
+                    <img src="./images/1024/20341072/steps-name-engraved-pen-Kje-d--64G574HPLc-7npQ.jpg" alt="Precision Engraving">
+                </div>
+                <div class="card-meta">Corporate Identity / West Bay</div>
+                <h3 class="card-title">Precision Engraving</h3>
+                <p class="card-excerpt">Tactile micro-branding through CNC precision engraving for executive gifting.</p>
+            </a>
+        </div>
     </main>
 
-    <!-- INFORMATIVE FOOTER -->
-    <footer class="footer">
-        <div class="container footer-grid reveal-fade">
-            <div class="footer-brand">
-                <h3>MARS SIGN</h3>
-                <p>With Mars Sign & Crafts, every detail matters. Whether it's for your business, brand, or celebration we're ready to craft it with care.</p>
-            </div>
-            <nav class="footer-nav" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div class="footer-col">
-                    <p class="section-tag">RESOURCES</p>
-                    <ul>
-                        <li><a href="/index.html#about">About Us</a></li>
-                        <li><a href="/projects.html">Our Projects</a></li>
-                        <li><a href="/blog.html">Industry Insights</a></li>
-                        <li><a href="/index.html#proof">Client Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <p class="section-tag">CONNECT</p>
-                    <ul>
-                        <li><a href="tel:+97470481341">+974 7048 1341</a></li>
-                        <li><a href="mailto:info@marssign.com">info@marssign.com</a></li>
-                        <li><a href="/index.html#contact">Request Quote</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <div class="footer-bottom container">
-            <p>© 2026 Mars Sign & Craft. Developed by Azym.</p>
-        </div>
-    </footer>
-
+    <footer><p>&copy; 2026 Mars Signs. All rights reserved.</p></footer>
     <script src="app.js"></script>
 </body>
 </html>

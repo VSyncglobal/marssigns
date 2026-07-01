@@ -1,10 +1,73 @@
 /**
- * MarsSign - Core Logic, Carousel Engine & Hardware-Accelerated Motion
+ * MarsSign - Core Logic, Carousel Engine, Hardware-Accelerated Motion & State Management
  */
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. AUTO-PLAYING HERO CAROUSEL
+    // --- 1. GLOBAL LOADING STATE MANAGEMENT ---
+    const loader = document.getElementById('global-loader');
+    
+    const showLoader = () => {
+        if (loader) loader.classList.add('active');
+    };
+
+    const hideLoader = () => {
+        if (loader) loader.classList.remove('active');
+    };
+
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', () => showLoader());
+    });
+
+    const asyncLinks = document.querySelectorAll('.async-click');
+    asyncLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const isBackLink = link.classList.contains('back-btn');
+            if(!isBackLink) {
+                // If it's a normal link, we show loader. 
+                // Remove preventDefault if you want the browser to actually navigate immediately.
+                showLoader();
+                setTimeout(hideLoader, 850); 
+            }
+        });
+    });
+
+    // --- 2. HEADER DROPDOWN LOGIC ---
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownToggle = document.getElementById('work-with-us-btn');
+
+    if (dropdown && dropdownToggle) {
+        dropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    }
+
+    // --- 3. FAQ ACCORDION LOGIC ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                // Close all others
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                // Toggle current
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+
+    // --- 4. AUTO-PLAYING HERO CAROUSEL ---
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.control-dot');
@@ -12,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let autoplayInterval;
 
     function goToSlide(index) {
+        if (!slides[currentSlide] || !dots[currentSlide]) return;
         slides[currentSlide].classList.remove('active');
         dots[currentSlide].classList.remove('active');
         currentSlide = index;
@@ -36,22 +100,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 2. SCROLL-DRIVEN FADE ANIMATIONS
+    // --- 5. SCROLL-DRIVEN FADE ANIMATIONS ---
     const observerOptions = { root: null, rootMargin: "0px", threshold: 0.12 };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("in-view");
+                entry.target.classList.add("is-visible");
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll(".reveal-fade");
+    const revealElements = document.querySelectorAll(".reveal-fade, .fade-in-section");
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // 3. DYNAMIC NUMBER COUNTER
+    // --- 6. DYNAMIC NUMBER COUNTER ---
     const counters = document.querySelectorAll('.stat-num');
     
     const counterObserver = new IntersectionObserver((entries, observer) => {
@@ -76,9 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     counters.forEach(counter => { counterObserver.observe(counter); });
 
-    // 4. DYNAMIC FLOATING HEADER
+    // --- 7. DYNAMIC FLOATING HEADER ---
     const header = document.getElementById("main-header");
     window.addEventListener("scroll", () => {
+        if (!header) return; 
+        
         if (window.scrollY > 80) {
             header.style.width = "100%";
             header.style.borderRadius = "0px";
