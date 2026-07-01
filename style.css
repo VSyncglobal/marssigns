@@ -245,4 +245,33 @@ img { max-width: 100%; display: block; }
     align-items: center;
     gap: 0.5rem;
 }
+/* Container Fix for Horizontal Scrolling */
+.marssigns-container {
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on mobile */
+}
+
+.divisions-scroll-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Division Item Consistency */
+.division-item {
+    flex: 0 0 auto; /* Prevents shrinking */
+    width: 300px; /* Adjust based on your viewport design */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Fixes broken image container aspect ratios */
+.card-image {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+}
 }

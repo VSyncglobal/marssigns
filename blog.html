@@ -2,66 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights & Market Identity | Mars Signs Qatar</title>
-    <!-- Assumes external CSS matching the style block in projects.html -->
-    <link rel="stylesheet" href="project-base.css"> 
+    <title>Insights | Mars Signs</title>
+    <link rel="stylesheet" href="project-base.css">
 </head>
 <body>
-    <div class="loading-overlay" id="global-loader"><div class="spinner"></div></div>
-
     <header id="main-header">
-        <div class="logo">
-            <a href="index.html"><img src="./images/1024/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg" alt="Mars Signs"></a>
-        </div>
+        <div class="logo"><a href="/"><img src="./images/1024/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg" alt="Mars Signs"></a></div>
         <nav class="nav-links">
-            <a href="blog.html" class="async-click">Insights</a>
-            <a href="projects.html" class="async-click">Projects</a>
+            <a href="projects.html">Projects</a>
+            <a href="blog.html">Insights</a>
+            <a href="blog.html">Insights</a>
+            <a href="blog.html">Insights</a>
         </nav>
     </header>
 
-    <section class="hero-section fade-in-section">
-        <div class="hero-content">
-            <h1>Market Insights</h1>
-            <p>Intelligence on visual branding, SEO, and corporate identity in Qatar.</p>
-        </div>
-    </section>
-
-    <main class="arrangement-container">
-        <h2 class="arrangement-header fade-in-section">Latest Articles</h2>
-        <div class="project-grid">
-            
-            <a href="blog-seo-qatar.html" class="card fade-in-section async-click">
-                <div class="card-image-wrapper">
-                    <img src="./images/1920/21343615/hero2-y1Uhj4rddDqx_7s7vuwSlA.jpg" alt="Corporate Identity Qatar">
-                </div>
-                <div class="card-meta">Brand Strategy / 3 Min Read</div>
-                <h3 class="card-title">Elevating Corporate Identity in Doha</h3>
-                <p class="card-excerpt">How high-end signage and architectural facades act as the physical cornerstone of your market authority.</p>
-            </a>
-
-            <a href="blog-materials.html" class="card fade-in-section async-click">
-                <div class="card-image-wrapper">
-                    <img src="./images/460/20853986/about-awards-marssign-nZs4tHucMYXCHmZwZ-hUxQ.jpg" alt="Material Science">
-                </div>
-                <div class="card-meta">Production / 4 Min Read</div>
-                <h3 class="card-title">Material Resilience in the Gulf Climate</h3>
-                <p class="card-excerpt">An analysis of substrate selection for long-lasting retail facades and outdoor structural branding.</p>
-            </a>
-
-            <a href="blog-gifting.html" class="card fade-in-section async-click">
-                <div class="card-image-wrapper">
-                    <img src="./images/1920/21343633/hero3-JCdHeGdqFXvNzEjaSs8ZBg.jpg" alt="Executive Gifting">
-                </div>
-                <div class="card-meta">Micro-Branding / 2 Min Read</div>
-                <h3 class="card-title">The Tactile Power of Precision Engraving</h3>
-                <p class="card-excerpt">Why executive corporate gifting remains a vital extension of high-level business interactions.</p>
-            </a>
-
-        </div>
+    <!-- The container class from project-base ensures alignment -->
+    <main id="blog-content" class="project-container">
+        <!-- Content will be injected here -->
     </main>
 
-    <footer><p>&copy; 2026 Mars Signs. All rights reserved.</p></footer>
-    <script src="app.js"></script>
+    <script src="blog-data.js"></script>
+    <script>
+        function loadContent() {
+            const hash = window.location.hash.substring(1);
+            const container = document.getElementById('blog-content');
+            
+            // If no hash or #list, show grid. Else, show post.
+            container.innerHTML = (!hash || hash === 'list') 
+                ? '<h1>Industry Insights</h1>' + renderList() 
+                : renderPost(hash);
+            
+            window.scrollTo(0, 0);
+        }
+        
+        window.addEventListener('hashchange', loadContent);
+        window.addEventListener('load', loadContent);
+    </script>
 </body>
 </html>
