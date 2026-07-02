@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mars Sign & Craft | Signage, Mementos, Laser Engraving in Qatar</title>
     <meta name="description" content="Leading signage & fabrication company in Qatar - 3D signs, LED, digital printing, awards, laser engraving, CNC & custom fabrication.">
-    
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- Floating Curved Header -->
     <header id="main-header" class="floating-header">
         <div class="header-container">
             <a href="/" class="logo" aria-label="Mars Signs Home">
-                <img src="https://marssigns.com/wp-content/uploads/2024/09/marssigns.png" alt="Mars Signs Logo" width="172" height="47" class="brand-logo">
+                <img src="/images/0/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg" alt="Mars Signs Logo" width="172" height="47" class="brand-logo">
             </a>
             <nav class="primary-nav">
                 <a href="#solutions">Solutions</a>
@@ -32,11 +31,9 @@
     <main>
         <!-- AUTO-PLAYING HERO CAROUSEL -->
         <section class="hero-carousel" id="hero">
-            
             <div class="carousel-slide active">
                 <div class="slide-image" style="background-image: url('/images/1024/20341072/steps-name-engraved-pen-Kje-d--64G574HPLc-7npQ.jpg');"></div>
                 <div class="container hero-content-wrapper">
-                    <!-- Left-anchored, enlarged blurred card -->
                     <div class="blurred-card hero-text-card">
                         <p class="section-tag">SIGNAGE SOLUTIONS</p>
                         <h1 class="hero-title">Industry Standard Printing & Display</h1>
@@ -45,7 +42,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="carousel-slide">
                 <div class="slide-image" style="background-image: url('/images/1920/21343615/hero2-y1Uhj4rddDqx_7s7vuwSlA.jpg');"></div>
                 <div class="container hero-content-wrapper">
@@ -57,7 +53,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="carousel-slide">
                 <div class="slide-image" style="background-image: url('/images/1920/21343633/hero3-JCdHeGdqFXvNzEjaSs8ZBg.jpg');"></div>
                 <div class="container hero-content-wrapper">
@@ -69,7 +64,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="carousel-controls">
                 <button class="control-dot active" aria-label="Slide 1"></button>
                 <button class="control-dot" aria-label="Slide 2"></button>
@@ -77,134 +71,136 @@
             </div>
         </section>
 
-        <!-- CORE SOLUTIONS (Renamed to reduce repetition) -->
+        <!-- CAPABILITIES SECTION - REFORMATTED -->
         <section class="container mt-100" id="solutions">
-            <div class="text-center reveal-fade mb-50">
+            <div class="text-center reveal-fade mb-60">
                 <p class="section-tag">CAPABILITIES</p>
-                <h2 class="section-title">Core Production Divisions</h2>
+                <h2 class="section-title">Our Capabilities</h2>
+                <p class="section-text" style="max-width: 720px; margin: 20px auto 0;">
+                    Premium signage, printing, engraving, and branding solutions crafted with precision for businesses and individuals in Qatar.
+                </p>
             </div>
-            
-            <div class="grid-container">
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
+
+            <!-- Category 1 -->
+            <div class="category-separator reveal-fade">
+                <h3>Visual & Display Graphics</h3>
+            </div>
+            <div class="grid-container-2 mb-60">
+                <article class="transparent-card interactive-card service-card reveal-fade" onclick="openServiceModal('signage')">
+                    <div class="slideshow-container" id="slideshow-signage"></div>
                     <div class="card-content">
                         <h3 class="card-title">Signage</h3>
                         <ul>
-                            <li>Neon Signage</li>
-                            <li>Office Outdoor Signage</li>
-                            <li>Road Signals</li>
+                            <li>Neon & LED Signage</li>
+                            <li>Outdoor Corporate Signs</li>
+                            <li>Road & Directional Signals</li>
                         </ul>
+                        <span class="btn-secondary mt-auto">View Details →</span>
                     </div>
                 </article>
 
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
+                <article class="transparent-card interactive-card service-card reveal-fade" onclick="openServiceModal('printing')">
+                    <div class="slideshow-container" id="slideshow-printing"></div>
                     <div class="card-content">
-                        <h3 class="card-title">Printing</h3>
+                        <h3 class="card-title">Professional Printing</h3>
                         <ul>
-                            <li>Fabric & Apparel Printing</li>
-                            <li>Flex & Banner Printing</li>
-                            <li>Sublimation & Screen Printing</li>
-                            <li>DTF Printing</li>
-                            <li>Large Format & Display</li>
-                            <li>Canvas & Posters</li>
+                            <li>Large Format & Banners</li>
+                            <li>DTF & Fabric Printing</li>
+                            <li>Canvas Posters & Displays</li>
                         </ul>
+                        <span class="btn-secondary mt-auto">View Details →</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="category-separator reveal-fade">
+                <h3>Custom Fabrication & Decor</h3>
+            </div>
+            <div class="grid-container-2 mb-60">
+                <article class="transparent-card interactive-card service-card reveal-fade" onclick="openServiceModal('engraving')">
+                    <div class="slideshow-container" id="slideshow-engraving"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Laser & Chemical Engraving</h3>
+                        <ul>
+                            <li>Precision Corporate Plaques</li>
+                            <li>Custom Branding & Gifts</li>
+                        </ul>
+                        <span class="btn-secondary mt-auto">View Details →</span>
                     </div>
                 </article>
 
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
+                <article class="transparent-card interactive-card service-card reveal-fade" onclick="openServiceModal('decor')">
+                    <div class="slideshow-container" id="slideshow-decor"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Interior Decor & Fine Art</h3>
+                        <ul>
+                            <li>Gallery Canvas Prints</li>
+                            <li>Fine Art Posters & Frames</li>
+                        </ul>
+                        <span class="btn-secondary mt-auto">View Details →</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="category-separator reveal-fade">
+                <h3>Corporate Merchandise & Apparel</h3>
+            </div>
+            <div class="grid-container-2 mb-60">
+                <article class="transparent-card interactive-card service-card reveal-fade" onclick="openServiceModal('promo1')">
+                    <div class="slideshow-container" id="slideshow-promo1"></div>
                     <div class="card-content">
                         <h3 class="card-title">Promotional Items</h3>
                         <ul>
-                            <li>Custom Apparels</li>
-                            <li>Mugs & Pens</li>
-                            <li>Tote Bags & Key Chains</li>
-                            <li>Diaries & USB Drives</li>
+                            <li>Branded Mugs & Pens</li>
+                            <li>Custom Apparel & Tote Bags</li>
+                            <li>Keychains & Diaries</li>
                         </ul>
+                        <span class="btn-secondary mt-auto">View Details →</span>
                     </div>
                 </article>
 
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
+                <article class="transparent-card interactive-card service-card reveal-fade" onclick="openServiceModal('embroidery')">
+                    <div class="slideshow-container" id="slideshow-embroidery"></div>
                     <div class="card-content">
-                        <h3 class="card-title">Prime Decor & Fine Art</h3>
+                        <h3 class="card-title">Embroidery Services</h3>
                         <ul>
-                            <li>Gallery Canvas Print</li>
-                            <li>Fine Art Posters</li>
+                            <li>Apparel Embroidery</li>
+                            <li>Custom Corporate Branding</li>
                         </ul>
+                        <span class="btn-secondary mt-auto">View Details →</span>
                     </div>
                 </article>
+            </div>
 
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
+            <!-- Category 4 -->
+            <div class="category-separator reveal-fade">
+                <h3>Recognition & Fleet Branding</h3>
+            </div>
+            <div class="grid-container-2">
+                <article class="transparent-card interactive-card service-card reveal-fade" onclick="openServiceModal('awards')">
+                    <div class="slideshow-container" id="slideshow-awards"></div>
                     <div class="card-content">
                         <h3 class="card-title">Awards & Trophies</h3>
                         <ul>
-                            <li>Trophies & Customized Trophies</li>
-                            <li>Plaques & Shields</li>
-                            <li>Medals & Certificates</li>
+                            <li>Custom Trophies & Medals</li>
+                            <li>Plaques & Recognition Shields</li>
                         </ul>
+                        <span class="btn-secondary mt-auto">View Details →</span>
                     </div>
                 </article>
 
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
+                <article class="transparent-card interactive-card service-card reveal-fade" onclick="openServiceModal('vehicle')">
+                    <div class="slideshow-container" id="slideshow-vehicle"></div>
                     <div class="card-content">
-                        <h3 class="card-title">Vehicle Branding</h3>
+                        <h3 class="card-title">Vehicle & Fleet Branding</h3>
                         <ul>
-                            <li>Full & Partial Vehicle Wraps</li>
-                            <li>Fleet Branding Solutions</li>
+                            <li>Full & Partial Wraps</li>
                             <li>Custom Decals & Lettering</li>
-                            <li>Window Graphics</li>
-                            <li>Reflective & Safety Markings</li>
+                            <li>Reflective Safety Markings</li>
                         </ul>
-                    </div>
-                </article>
-
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Embroidery</h3>
-                        <ul>
-                            <li>Apparel Embroidery</li>
-                            <li>Cup Embroidery</li>
-                            <li>Customized Embroidery</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Engraving</h3>
-                        <ul>
-                            <li>Laser Engraving</li>
-                            <li>Chemical Engraving</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Displays & Stands</h3>
-                        <ul>
-                            <li>Display Stands</li>
-                            <li>Queue Stands</li>
-                            <li>Fabric Flags with Stands</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="transparent-card reveal-fade">
-                    <div class="image-placeholder"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Support Services</h3>
-                        <ul>
-                            <li>In-House Graphic Design</li>
-                            <li>Maintenance & Removal</li>
-                        </ul>
+                        <span class="btn-secondary mt-auto">View Details →</span>
                     </div>
                 </article>
             </div>
@@ -228,7 +224,6 @@
             <div class="text-center reveal-fade">
                 <p class="section-tag">OPERATIONAL METRICS</p>
                 <h2 class="section-title">Driven by Numbers</h2>
-                
                 <div class="stats-grid mt-40">
                     <div class="transparent-stat">
                         <span class="stat-num" data-target="20">0</span><span class="stat-plus">+</span>
@@ -268,7 +263,6 @@
                         <span>Corporate Client</span>
                     </footer>
                 </blockquote>
-                
                 <blockquote class="review-card">
                     <div class="review-header">
                         <span class="platform-name trustpilot">Trustpilot</span>
@@ -280,7 +274,6 @@
                         <span>Event Organizer</span>
                     </footer>
                 </blockquote>
-
                 <blockquote class="review-card">
                     <div class="review-header">
                         <span class="platform-name facebook">Facebook</span>
@@ -292,7 +285,6 @@
                         <span>Small Business Owner</span>
                     </footer>
                 </blockquote>
-                
                 <blockquote class="review-card">
                     <div class="review-header">
                         <span class="platform-name qatar-dir">Qatar Directory</span>
@@ -307,14 +299,13 @@
             </div>
         </section>
 
-        <!-- NOTABLE BRANDS / PARTNERS -->
+        <!-- PARTNERS -->
         <section class="container mt-100" id="partners">
             <div class="text-center reveal-fade mb-50">
                 <p class="section-tag">OUR PARTNERS</p>
                 <h2 class="section-title">Trusted by Qatari Enterprises</h2>
             </div>
             <div class="brands-grid reveal-fade">
-                <!-- Replace src with actual client logos -->
                 <div class="brand-logo-wrapper"><img src="/images/placeholder-logo1.svg" alt="Partner Brand 1" loading="lazy"></div>
                 <div class="brand-logo-wrapper"><img src="/images/placeholder-logo2.svg" alt="Partner Brand 2" loading="lazy"></div>
                 <div class="brand-logo-wrapper"><img src="/images/placeholder-logo3.svg" alt="Partner Brand 3" loading="lazy"></div>
@@ -323,23 +314,23 @@
             </div>
         </section>
 
-        <!-- RESOURCES (Projects & Blogs Routing) -->
+        <!-- RESOURCES -->
         <section class="container layout-grid mt-100" id="resources">
             <div class="floating-card interactive-card p-40 reveal-fade" onclick="location.href='/projects.html'">
                 <p class="section-tag">PORTFOLIO</p>
                 <h2 class="section-title">Recent Deployments</h2>
                 <p class="mb-50">Explore our structural gallery of completed signage, fleet branding, and custom fabrication projects across Doha.</p>
-                <a href="/projects.html" class="btn-secondary">View Gallery &rarr;</a>
+                <a href="/projects.html" class="btn-secondary">View Gallery →</a>
             </div>
             <div class="floating-card interactive-card p-40 reveal-fade" onclick="location.href='/blog.html'">
                 <p class="section-tag">KNOWLEDGE BASE</p>
                 <h2 class="section-title">Industry Insights</h2>
                 <p class="mb-50">Read our latest articles on material selection, modern printing technologies, and maximizing your brand visibility.</p>
-                <a href="/blog.html" class="btn-secondary">Read Articles &rarr;</a>
+                <a href="/blog.html" class="btn-secondary">Read Articles →</a>
             </div>
         </section>
 
-        <!-- INFORMATIVE CONTACT SECTION -->
+        <!-- CONTACT -->
         <section class="container layout-grid mt-100 mb-100" id="contact">
             <div class="floating-card reveal-fade">
                 <p class="section-tag">GET IN TOUCH</p>
@@ -403,7 +394,21 @@
         </section>
     </main>
 
-    <!-- INFORMATIVE FOOTER -->
+    <!-- SERVICE MODAL -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeServiceModal()">×</span>
+            <h2 id="modal-title" class="section-title">Service Title</h2>
+            <p id="modal-description" class="mb-0">Description goes here.</p>
+            <div id="modal-gallery" class="expanded-gallery"></div>
+            <div class="cta-group" style="display: flex; gap: 15px; margin-top: 30px;">
+                <a href="#contact" class="btn-primary" onclick="closeServiceModal()">Request Quote</a>
+                <a href="tel:+97470690143" class="btn-secondary" style="border: none; padding-top: 10px;">Call Us directly</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-grid reveal-fade">
             <div class="footer-brand">
