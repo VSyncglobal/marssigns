@@ -98,13 +98,13 @@ body {
 .blog-grid {
     display: grid;
     /* Directive: Mobile: Display 3 blog cards per row */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
     align-items: stretch;
 }
 
 /* Directive: Desktop: Display 5 blog cards per row */
-@media (min-width: 1024px) {
+@media (min-width: 1500px) {
     .blog-grid {
         grid-template-columns: repeat(5, 1fr);
     }

@@ -3,7 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects & Deployments | Mars Signs Qatar</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Portfolio & Projects | Mars Sign & Craft Qatar</title>
+    <meta name="title" content="Portfolio & Projects | Mars Sign & Craft Qatar">
+    <meta name="description" content="Explore our gallery of completed structural branding, outdoor signage, and custom fabrication projects in Doha, Qatar.">
+    <meta name="keywords" content="signage projects Qatar, custom fabrication portfolio, outdoor signage Doha, Mars Sign work">
+    <meta name="author" content="Mars Sign & Craft">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://marssign.com/projects.html">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/images/0/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marssign.com/projects.html">
+    <meta property="og:title" content="Portfolio & Projects | Mars Sign & Craft Qatar">
+    <meta property="og:description" content="Explore our gallery of completed structural branding, outdoor signage, and custom fabrication projects in Doha, Qatar.">
+    <meta property="og:image" content="https://marssign.com/images/1400/20341388/exibition-graphics-1aSu41fe87ZLRt1886na6A.jpg">
+    
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://marssign.com/projects.html">
+    <meta name="twitter:title" content="Portfolio & Projects | Mars Sign & Craft Qatar">
+    <meta name="twitter:description" content="Explore our gallery of completed structural branding, outdoor signage, and custom fabrication projects in Doha, Qatar.">
+    <meta name="twitter:image" content="https://marssign.com/images/1400/20341388/exibition-graphics-1aSu41fe87ZLRt1886na6A.jpg">
+
+    <!-- Fonts & Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
     <style>
@@ -35,11 +67,19 @@
         
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            /* Forces exactly 3 columns across */
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             max-width: 1400px;
             margin: 0 auto;
             padding: 40px 20px 100px;
+        }
+
+        /* Standard mobile fallback for projects (optional, keeps layout clean on phones) */
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .project-card {
@@ -111,10 +151,10 @@
     <header id="main-header" class="floating-header">
         <div class="header-container">
             <a href="index.html" class="logo" aria-label="Mars Signs Home">
-                <img src="https://marssigns.com/wp-content/uploads/2024/09/marssigns.png" alt="Mars Signs Logo" width="172" height="47" class="brand-logo">
+                <img src="/images/0/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg" alt="Mars Signs Logo" width="172" height="47" class="brand-logo">
             </a>
             <nav class="primary-nav">
-                <a href="index.html#solutions">Solutions</a>
+                <a href="index.html#solutions">Services</a>
                 <a href="index.html#about">About Us</a>
                 <a href="projects.html" class="active">Projects</a>
                 <a href="blog.html">Insights</a>

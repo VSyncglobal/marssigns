@@ -3,8 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights | Mars Signs Qatar</title>
-    <meta name="description" content="Expert articles on signage, branding, fabrication, and visual communication in Qatar.">
+    
+    <!-- Primary Meta Tags -->
+    <title>Industry Insights & News | Mars Sign & Craft Qatar</title>
+    <meta name="title" content="Industry Insights & News | Mars Sign & Craft Qatar">
+    <meta name="description" content="Expert articles on architectural branding, signage materials, and visual communication strategies for businesses in Qatar.">
+    <meta name="keywords" content="signage blog Qatar, architectural branding insights, visual communication, Mars Sign news">
+    <meta name="author" content="Mars Sign & Craft">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://marssign.com/blog.html">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/images/0/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marssign.com/blog.html">
+    <meta property="og:title" content="Industry Insights & News | Mars Sign & Craft Qatar">
+    <meta property="og:description" content="Expert articles on architectural branding, signage materials, and visual communication strategies for businesses in Qatar.">
+    <!-- Using one of your blog images for the thumbnail -->
+    <meta property="og:image" content="https://marssign.com/images/1500/20488373/city-signage-modern-Dj82KdP0sLq.jpg">
+    
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://marssign.com/blog.html">
+    <meta name="twitter:title" content="Industry Insights & News | Mars Sign & Craft Qatar">
+    <meta name="twitter:description" content="Expert articles on architectural branding, signage materials, and visual communication strategies for businesses in Qatar.">
+    <meta name="twitter:image" content="https://marssign.com/images/1500/20488373/city-signage-modern-Dj82KdP0sLq.jpg">
+
+    <!-- Fonts & Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
     <style>
@@ -22,13 +54,30 @@
         
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            /* Forces 5 columns across on desktop */
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             max-width: 1400px;
             margin: 0 auto;
             padding: 40px 20px 120px;
         }
         
+        /* Mobile adjustment for 3 columns */
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px; /* Slightly smaller gap to fit 3 columns on small screens */
+            }
+            
+            /* Optional: Reduce the image height on mobile so the 3 tight columns look balanced */
+            .blog-card-image-wrapper {
+                height: 120px; 
+            }
+            
+            .blog-card h3 {
+                font-size: 1rem; /* Scale down text for tight mobile columns */
+            }
+        }
         .blog-card {
             background: var(--pure-white);
             border-radius: 16px;
@@ -111,10 +160,10 @@
     <header id="main-header" class="floating-header">
         <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="https://marssigns.com/wp-content/uploads/2024/09/marssigns.png" alt="Mars Signs Logo" width="172" height="47" class="brand-logo">
+                <img src="/images/0/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg" alt="Mars Signs Logo" width="172" height="47" class="brand-logo">
             </a>
             <nav class="primary-nav">
-                <a href="index.html#solutions">Solutions</a>
+                <a href="index.html#solutions">Services</a>
                 <a href="index.html#about">About Us</a>
                 <a href="projects.html">Projects</a>
                 <a href="blog.html" class="active">Insights</a>
@@ -222,71 +271,112 @@
         }
     };
 
-    // ====================== RENDER FUNCTIONS ======================
-    function renderList() {
-        let html = `
-            <section class="blog-hero">
-                <div class="hero-content">
-                    <p class="section-tag">INDUSTRY INSIGHTS</p>
-                    <h1 class="section-title">Knowledge & Expertise</h1>
-                    <p class="section-text" style="max-width: 680px; margin: 20px auto 0;">
-                        Expert perspectives on signage, branding, fabrication, and visual communication.
-                    </p>
-                </div>
-            </section>
-
-            <main class="container">
-                <div class="blog-grid">
-        `;
-
-        Object.keys(blogs).forEach(id => {
-            const post = blogs[id];
-            html += `
-                <a href="#${id}" class="blog-card">
-                    <div class="blog-card-image-wrapper">
-                        <img src="${post.image}" alt="${post.title}" loading="lazy">
-                    </div>
-                    <div class="blog-card-content">
-                        <div class="blog-meta">${post.category}</div>
-                        <h3>${post.title}</h3>
-                        <p class="blog-excerpt">${post.content.substring(0, 145)}...</p>
-                        <span class="btn-secondary" style="margin-top:auto;">Read Full Article →</span>
-                    </div>
-                </a>
-            `;
-        });
-
-        html += `</div></main>`;
-        return html;
-    }
-
-    function renderPost(id) {
-        const post = blogs[id];
-        if (!post) return renderList();
-
-        return `
-            <div class="blog-post" style="max-width:920px; margin:120px auto; padding:0 20px;">
-                <a href="blog.html" class="btn-secondary" style="margin-bottom:30px; display:inline-block;">← Back to All Articles</a>
-                <h1 class="section-title">${post.title}</h1>
-                <img src="${post.image}" alt="${post.title}" style="width:100%; border-radius:16px; margin:30px 0;">
-                <div style="font-size:1.08rem; line-height:1.85; color:#333;">
-                    ${post.content}
-                </div>
-                <a href="index.html#contact" class="btn-primary" style="margin-top:50px;">Work With Us</a>
+// ====================== RENDER FUNCTIONS ======================
+function renderList() {
+    let html = `
+        <section class="blog-hero">
+            <div class="hero-content">
+                <p class="section-tag">INDUSTRY INSIGHTS</p>
+                <h1 class="section-title">Knowledge & Expertise</h1>
+                <p class="section-text" style="max-width: 680px; margin: 20px auto 0;">
+                    Expert perspectives on signage, branding, fabrication, and visual communication.
+                </p>
             </div>
+        </section>
+        <main class="container">
+            <div class="blog-grid">
+    `;
+    Object.keys(blogs).forEach(id => {
+        const post = blogs[id];
+        html += `
+            <a href="#${id}" class="blog-card">
+                <div class="blog-card-image-wrapper">
+                    <!-- SEO Optimized Alt Text -->
+                    <img src="${post.image}" alt="${post.title} - Architectural and Signage Insights Qatar" loading="lazy">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-meta">${post.category}</div>
+                    <h3>${post.title}</h3>
+                    <p class="blog-excerpt">${post.content.substring(0, 145)}...</p>
+                    <span class="btn-secondary" style="margin-top:auto;">Read Full Article →</span>
+                </div>
+            </a>
         `;
+    });
+    html += `</div></main>`;
+    return html;
+}
+
+function renderPost(id) {
+    const post = blogs[id];
+    if (!post) return renderList();
+
+    // --- AGGRESSIVE SEO INJECTION START ---
+    
+    // Update Title and Meta Description
+    document.title = `${post.title} | Mars Sign Insights`;
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        // Grab the first 150 characters for the description
+        metaDesc.setAttribute("content", post.content.substring(0, 150) + "...");
     }
 
-    // ====================== ROUTING ======================
-    function loadContent() {
-        const hash = window.location.hash.substring(1);
-        const container = document.getElementById('blog-container');
-        container.innerHTML = hash ? renderPost(hash) : renderList();
-        window.scrollTo(0, 0);
-    }
+    // Remove any previously injected article schema to avoid duplicates
+    const existingSchema = document.getElementById('dynamic-article-schema');
+    if (existingSchema) existingSchema.remove();
 
-    window.addEventListener('hashchange', loadContent);
-    window.addEventListener('load', loadContent);
+    // Inject 'Article' JSON-LD Schema
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "articleSection": post.category,
+        "image": "https://marssign.com" + post.image.replace('./', '/'),
+        "author": {
+            "@type": "Organization",
+            "name": "Mars Sign & Craft"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mars Sign & Craft",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://marssign.com/images/0/20885491/Mars-logo-PpRQrZOCPddFumb2s9tzmg.svg"
+            }
+        },
+        "description": post.content.substring(0, 150) + "..."
+    };
+
+    const scriptTag = document.createElement('script');
+    scriptTag.id = 'dynamic-article-schema';
+    scriptTag.type = "application/ld+json";
+    scriptTag.text = JSON.stringify(articleSchema);
+    document.head.appendChild(scriptTag);
+    
+    // --- AGGRESSIVE SEO INJECTION END ---
+
+    return `
+        <div class="blog-post" style="max-width:920px; margin:120px auto; padding:0 20px;">
+            <a href="blog.html" class="btn-secondary" style="margin-bottom:30px; display:inline-block;">← Back to All Articles</a>
+            <h1 class="section-title">${post.title}</h1>
+            <!-- SEO Optimized Alt Text -->
+            <img src="${post.image}" alt="${post.title} - Architectural and Signage Insights Qatar" style="width:100%; border-radius:16px; margin:30px 0;">
+            <div style="font-size:1.08rem; line-height:1.85; color:#333;">
+                ${post.content}
+            </div>
+            <a href="/#contact" class="btn-primary" style="margin-top:50px;">Work With Us</a>
+        </div>
+    `;
+}
+
+// ====================== ROUTING ======================
+function loadContent() {
+    const hash = window.location.hash.substring(1);
+    const container = document.getElementById('blog-container');
+    container.innerHTML = hash ? renderPost(hash) : renderList();
+    window.scrollTo(0, 0);
+}
+
+window.addEventListener('hashchange', loadContent);
+window.addEventListener('load', loadContent);
 </script>
-</body>
-</html>

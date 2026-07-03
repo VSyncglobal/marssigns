@@ -17,10 +17,7 @@ const serviceData = {
 
     signage: {
         title: "Corporate & Outdoor Signage",
-
-        description:
-        "From glowing neon signs to robust outdoor corporate branding, we build signage that is durable, vibrant, and impossible to ignore.",
-
+        description: "From glowing neon signs to robust outdoor corporate branding, we build signage that is durable, vibrant, and impossible to ignore.",
         features: [
             "LED illuminated signage",
             "Outdoor branding systems",
@@ -29,7 +26,6 @@ const serviceData = {
             "Large format signage",
             "Corporate identity integration"
         ],
-
         images: [
             "/images/641/20317996/custom-printing2-DIs6ZkFcFRVNW-NbNgKcSg.jpg",
             "/images/641/20318283/memento-hvbKnPQRfjkemjrtJgW4NA.jpg",
@@ -39,10 +35,7 @@ const serviceData = {
 
     engraving: {
         title: "Precision Engraving Solutions",
-
-        description:
-        "Permanent, elegant laser and chemical engraving applied meticulously to your corporate gifts and essential signage.",
-
+        description: "Permanent, elegant laser and chemical engraving applied meticulously to your corporate gifts and essential signage.",
         features: [
             "Laser engraving",
             "Chemical engraving",
@@ -51,7 +44,6 @@ const serviceData = {
             "Industrial marking",
             "Custom branding"
         ],
-
         images: [
             "/images/460/20853986/about-awards-marssign-nZs4tHucMYXCHmZwZ-hUxQ.jpg",
             "/images/576/20318283/memento-hvbKnPQRfjkemjrtJgW4NA.jpg"
@@ -60,10 +52,7 @@ const serviceData = {
 
     promo1: {
         title: "Branded Drinkware",
-
-        description:
-        "High-quality branded mugs and bottles perfect for giveaways, corporate events, and everyday utility.",
-
+        description: "High-quality branded mugs and bottles perfect for giveaways, corporate events, and everyday utility.",
         features: [
             "Corporate mugs",
             "Bottle printing",
@@ -72,7 +61,6 @@ const serviceData = {
             "Bulk branding",
             "Premium printing"
         ],
-
         images: [
             "/images/576/20313425/about-img-pprinted-mugs-rQmVnCX6D2Kyp78JpXd5ag.jpg",
             "/images/576/20317996/custom-printing2-DIs6ZkFcFRVNW-NbNgKcSg.jpg"
@@ -81,10 +69,7 @@ const serviceData = {
 
     promo2: {
         title: "Apparel & Accessories",
-
-        description:
-        "Make your team look sharp and unified with premium printed t-shirts, personalized bags, lanyards, and custom mouse pads.",
-
+        description: "Make your team look sharp and unified with premium printed t-shirts, personalized bags, lanyards, and custom mouse pads.",
         features: [
             "Custom t-shirts",
             "Corporate apparel",
@@ -93,7 +78,6 @@ const serviceData = {
             "Mouse pads",
             "Keychains & gifts"
         ],
-
         images: [
             "/images/576/20854969/mug-VU4xaO-0a5SYB6JGk-5EQg.jpg",
             "/images/576/20855083/bottle-Q-jMC8_bNyhKDkC_Pi9G3g.jpg",
@@ -103,16 +87,14 @@ const serviceData = {
             "/images/576/20857117/lanyard-jE0B8C44Gzwc0QpkqzDBOQ.jpg",
             "/images/576/20857227/mouse-pad-TLu5I_cJyT2zQirm6gCtvA.jpg",
             "/images/576/20860750/keychain-5lug4hjNfcvItI0c2fGzqQ.jpg",
-            "/images/576/20861328/corporate-heo4PLuxVwwhpIYeq5o0gQ.jpg"
+            "/images/576/20861328/corporate-heo4PLuxVwwhpIYeq5o0gQ.jpg",
+            "/images/641/20854969/mug-VU4xaO-0a5SYB6JGk-5EQg.jpg"
         ]
     },
 
     awards: {
         title: "Awards & Recognition",
-
-        description:
-        "Stunning acrylic, crystal, and wood trophies alongside premium medals to celebrate your top achievers properly.",
-
+        description: "Stunning acrylic, crystal, and wood trophies alongside premium medals to celebrate your top achievers properly.",
         features: [
             "Corporate trophies",
             "Crystal awards",
@@ -121,22 +103,16 @@ const serviceData = {
             "Sports awards",
             "Custom engraving"
         ],
-
         images: [
             "/images/576/20857500/medals-8M66nGRb7yZ63wq26yi12g.jpg",
             "/images/576/20857567/trophy-GAdTkhRo0OvGwfTL1FrAbQ.jpg",
-            "/images/576/20861386/sports-z1HKdJFR6F05zV4L14YvJw.jpg",
-            "/images/576/21343615/hero2-y1Uhj4rddDqx_7s7vuwSlA.jpg"
-           
+            "/images/576/20861386/sports-z1HKdJFR6F05zV4L14YvJw.jpg"
         ]
     },
 
     decor: {
         title: "Prime Decor & Fine Art",
-
-        description:
-        "Elevate interior spaces with gallery canvas prints, fine art posters, and elegantly structured snap frames.",
-
+        description: "Elevate interior spaces with gallery canvas prints, fine art posters, and elegantly structured snap frames.",
         features: [
             "Canvas printing",
             "Interior decor",
@@ -145,7 +121,6 @@ const serviceData = {
             "Wall graphics",
             "Premium finishing"
         ],
-
         images: [
             "/images/576/20858821/mdf-o2KkC57OqV1vHwvgxY25zw.jpg",
             "/images/576/20859712/acrylic-P0FpNuNLfiP2_c1oOhuW_Q.jpg",
@@ -157,10 +132,7 @@ const serviceData = {
 
     printing: {
         title: "Professional Printing",
-
-        description:
-        "Versatile large-format, DTF, and standard visual printing that maintains crisp colors and sharp typography.",
-
+        description: "Versatile large-format, DTF, and standard visual printing that maintains crisp colors and sharp typography.",
         features: [
             "Large format printing",
             "DTF printing",
@@ -169,11 +141,38 @@ const serviceData = {
             "Banner production",
             "Display graphics"
         ],
-
         images: [
             "/images/576/20860589/laser-V9kWw9dszIhy9Owzmv7SpQ.jpg",
             "/images/576/20860708/uv-48bk1hC9wB3cplX88G5jGg.jpg",
             "/images/576/20861293/school-iniQ1QWwVWVfq5mhohteJw.jpg"
+        ]
+    },
+
+    embroidery: {
+        title: "Embroidery Services",
+        description: "Premium custom embroidery for apparel and corporate branding.",
+        features: [
+            "Apparel embroidery",
+            "Custom corporate branding",
+            "Patches & logos"
+        ],
+        images: [
+            "/images/576/20855182/tshirt-X7wqRq9wsvUVsWZRN9MV5w.jpg",
+            "/images/576/20855360/bag-jbYCVJx_ZnkFK31vnrWKMQ.jpg"
+        ]
+    },
+
+    vehicle: {
+        title: "Vehicle & Fleet Branding",
+        description: "Full and partial vehicle wraps with professional installation.",
+        features: [
+            "Full & partial wraps",
+            "Custom decals & lettering",
+            "Reflective safety markings"
+        ],
+        images: [
+            "/images/630/20345123/sign2-NvqiqwtMe10I2_JRpzstoA.jpg",
+            "/images/576/20855360/bag-jbYCVJx_ZnkFK31vnrWKMQ.jpg"
         ]
     }
 
