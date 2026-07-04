@@ -2,7 +2,7 @@ const blogs = {
     "politics-of-space": { 
         title: "The Politics of Public Spaces",
         category: "Systems",
-        image: "./images/1400/20341388/exibition-graphics-1aSu41fe87ZLRt1886na6A.jpg",
+        image: "./images/new/politicsofpublicspaces.jpg",
         content: "When we discuss urban governance, we are truly discussing the allocation of communal space. A well-designed public plaza or facade acts as a physical statement of transparency and accessibility in our cities. By prioritizing architectural openness and clear, welcoming signage, city planners and private developers can foster environments where citizens feel represented, heard, and invited. The intersection of policy and design is the new frontier for modern governance. At Mars Signs, we specialize in creating visual infrastructure that promotes this sense of collective ownership. When a space is designed with the public’s experience at the forefront, it bridges the gap between administrative intent and the individual’s lived experience. Modern politics is increasingly expressed through the built environment; public architecture defines who belongs in a city and who is excluded. We believe that professional, clear, and inclusive signage is a democratic necessity. It provides the cues necessary for people to navigate their environment with confidence, regardless of their background or language. We are here to help translate your vision for a more inclusive, accessible environment into a tangible, high-quality reality. Our team is dedicated to the idea that architecture should not just serve a function but should serve the community. If you are looking for a partner who values the social impact of your work, we would love to discuss how we can elevate your next civic project. Hire us to bring your public-facing initiatives to life with integrity and precision."
     },
 
@@ -23,7 +23,7 @@ const blogs = {
     "future-of-branding": {
         title: "The Future of Architectural Branding",
         category: "Branding",
-        image: "./images/1600/21343655/hero2-x7DkFvQ7M3sLqB29P.jpg",
+        image: "/images/new/futureofArchitecturalbranding.jpg",
         content: "Branding has evolved far beyond logos and digital advertisements. In the modern urban landscape, architecture itself has become an extension of brand identity. Consumers no longer separate physical space from corporate values; they interpret every material, every texture, and every illuminated surface as part of a business narrative. At Mars Signs, we believe that architectural branding should communicate confidence, professionalism, and permanence from the very first glance. A carefully engineered facade creates an emotional connection before a customer even steps inside your premises. Through advanced fabrication systems and durable materials, we help brands transform ordinary storefronts into recognizable landmarks that inspire trust. Modern clients expect consistency between online presence and physical environment, making facade design one of the most important investments a business can make. We approach every project with a balance of engineering precision and creative thinking, ensuring that your identity is reflected in every detail. Our team specializes in creating structures that remain visually powerful despite years of environmental exposure. If your organization is ready to redefine how customers experience your brand in the real world, we are prepared to deliver solutions that combine durability, innovation, and timeless design excellence."
     },
 

@@ -807,4 +807,115 @@ img { max-width: 100%; display: block; }
     fill: var(--pure-white); 
 }
 
+/* ==================================================
+   HEADER RESPONSIVE POSITIONING
+================================================== */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-left-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Attaches content tightly to the left side */
+    gap: 16px; /* Balance spacing between the toggle bars and the logo */
+}
+
+/* ==================================================
+   HAMBURGER INTERFACE TOGGLE (MORPHING ANIMATION)
+================================================== */
+.mobile-menu-toggle {
+    display: none; /* Hidden during desktop views */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Stays fixed securely over panel expansions */
+    padding: 0;
+}
+
+.mobile-menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 3px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Transform Hamburger Shapes into close icon (X) */
+.mobile-menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.mobile-menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-15px);
+}
+.mobile-menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ==================================================
+   MOBILE DRAW-DOWN DRAWER (VERTICAL NAVIGATION)
+================================================== */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex; /* Triggers rendering on screens under 769px */
+    }
+
+    .primary-nav {
+        position: absolute;
+        top: 100%; /* Spawns panel exactly flush underneath header */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        
+        /* Forces structural items to display in a vertical column instead of row */
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.45s ease;
+        box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+        border-radius: 0 0 16px 16px;
+    }
+
+    /* Target state class manipulated via JS trigger toggle */
+    .primary-nav.open {
+        max-height: 480px;
+        padding: 30px 0;
+    }
+
+    /* Links position configuration */
+    .primary-nav a {
+        display: block !important; /* Overrides inline-block row values */
+        width: 100%;
+        text-align: center;
+        margin: 14px 0 !important;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    /* Cascading staggered entrance animations for clean visual pacing */
+    .primary-nav.open a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .primary-nav.open a:nth-child(1) { transition-delay: 0.05s; }
+    .primary-nav.open a:nth-child(2) { transition-delay: 0.10s; }
+    .primary-nav.open a:nth-child(3) { transition-delay: 0.15s; }
+    .primary-nav.open a:nth-child(4) { transition-delay: 0.20s; }
+    .primary-nav.open a:nth-child(5) { transition-delay: 0.25s; }
+}
+
 }

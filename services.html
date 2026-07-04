@@ -156,16 +156,15 @@
     </footer>
 
     <!-- Load App Logic to access serviceData -->
-    <script src="app.js"></script>
-    
-    <!-- Dynamic Page Renderer -->
-   <script>
+  <script src="app.js" defer></script> <!-- Added defer for performance -->
+<script>
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Get the requested service from the URL hash (e.g. #awards)
-    const hash = window.location.hash.substring(1);
+    // 1. Get the requested service from the URL Query Parameter (e.g. ?service=awards)
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryKey = urlParams.get('service');
     
     // 2. Validate against app.js data. Fallback to 'signage' if empty/invalid.
-    const serviceKey = (hash && typeof serviceData !== 'undefined' && serviceData[hash]) ? hash : 'signage';
+    const serviceKey = (queryKey && typeof serviceData !== 'undefined' && serviceData[queryKey]) ? queryKey : 'signage';
     const service = serviceData[serviceKey];
     
     // 3. Update Page Title
@@ -210,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 4. Generate Images for the responsive Grid (SEO Optimized)
     const imagesHtml = service.images.map((img) => {
-        return `<img src="${img}" alt="${service.title} manufacturing, fabrication, and installation in Doha, Qatar" loading="lazy" onerror="this.src='/images/dummy.png';">`;
+        return `<img src="${img}" alt="${service.title} manufacturing, fabrication, and installation in Doha, Qatar" loading="lazy" decoding="async" onerror="this.src='/images/dummy.png';">`;
     }).join('');
     
     // 5. Generate Feature List

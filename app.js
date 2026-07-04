@@ -123,9 +123,7 @@ const serviceData = {
         ],
         images: [
             "/images/576/20858821/mdf-o2KkC57OqV1vHwvgxY25zw.jpg",
-            "/images/576/20859712/acrylic-P0FpNuNLfiP2_c1oOhuW_Q.jpg",
             "/images/576/20859968/forex-EedhkxvrtfxWOrzOvTxJzQ.jpg",
-            "/images/576/20860021/snapframe-Uu_EBFp-mh5hA7TFvwTXww.jpg",
             "/images/660/20861792/special-W5s5eQdiZDqssCVcqUgv_w.jpg"
         ]
     },
@@ -157,8 +155,10 @@ const serviceData = {
             "Patches & logos"
         ],
         images: [
-            "/images/576/20855182/tshirt-X7wqRq9wsvUVsWZRN9MV5w.jpg",
-            "/images/576/20855360/bag-jbYCVJx_ZnkFK31vnrWKMQ.jpg"
+            "/images/new/embroidery.jpg",
+            "/images/new/hoodembroidery.jpg",
+            "/images/new/Embroidery.jpg"
+
         ]
     },
 
@@ -171,9 +171,9 @@ const serviceData = {
             "Reflective safety markings"
         ],
         images: [
-            "/images/630/20345123/sign2-NvqiqwtMe10I2_JRpzstoA.jpg",
-            "/images/576/20855360/bag-jbYCVJx_ZnkFK31vnrWKMQ.jpg"
-        ]
+           "/images/new/brandingvehicle.jpg",
+            "/images/new/businessvehiclebranding.jpg",
+            "/images/new/Vehicle_branding.jpg"        ]
     }
 
 };
@@ -589,4 +589,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, { passive: true });
 
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const navDrawer = document.querySelector('.primary-nav');
+
+    if (toggleButton && navDrawer) {
+        // Triggers animation classes on user input interaction
+        toggleButton.addEventListener('click', () => {
+            toggleButton.classList.toggle('open');
+            navDrawer.classList.toggle('open');
+        });
+
+        // Safely resets tracking visibility states once link targets fire
+        navDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleButton.classList.remove('open');
+                navDrawer.classList.remove('open');
+            });
+        });
+    }
 });
