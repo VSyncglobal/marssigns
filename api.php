@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // The email address that will receive the notifications
-    $recipient_email = "chegesammwel@gmail.com"; 
+    $recipient_email = "paul@gmail.com"; 
     
     // Sanitize and validate inputs from your specific HTML form
     $name = strip_tags(trim($_POST["name"]));
