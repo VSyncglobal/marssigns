@@ -1,12 +1,3 @@
-/**
- * MarsSign - Core Logic, Carousel Engine, Hardware-Accelerated Motion & State Management
- * UI/UX UPDATE: Integrated automated service slideshows and expandable modal mapping.
- */
-
-/* ==========================================================================
-   GLOBAL PLACEHOLDER
-   ========================================================================== */
-
 const defaultPlaceholder = '/images/dummy.png';
 
 /* ==========================================================================
