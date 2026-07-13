@@ -132,7 +132,7 @@ const serviceData = {
         ],
         images: [
             "/images/576/20860589/laser-V9kWw9dszIhy9Owzmv7SpQ.jpg",
-            "/images/576/20860708/uv-48bk1hC9wB3cplX88G5jGg.jpg",
+            "images/new/proimagege.webp",
             "/images/576/20861293/school-iniQ1QWwVWVfq5mhohteJw.jpg"
         ]
     },
